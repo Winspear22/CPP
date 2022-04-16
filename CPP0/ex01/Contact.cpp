@@ -3,14 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adaloui <adaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 16:34:06 by user42            #+#    #+#             */
-/*   Updated: 2022/04/14 19:02:55 by user42           ###   ########.fr       */
+/*   Updated: 2022/04/16 19:06:44 by adaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
+#include "PhoneBook.hpp"
+
+std::string Contact::donnees_nom[4] =
+{
+	"First name",
+	"Last name",
+	"Nickname",
+	"Phone number"
+};
 
 Contact::Contact(void)
 {
@@ -22,8 +30,15 @@ Contact::~Contact(void)
     return;
 }
 
-void Contact::write_category(void)
+void Contact::write_informations(int contact_nb)
 {
-    std::string contact_category[5] = {"first name", "last name", "nickname", "phone number", "darkest secret"};
-
+	(void)contact_nb;
+	std::cout << "Please enter : " << donnees_nom[0] << std::endl;
+	std::cin >> this->donnees[0];
+	std::cout << "Please enter : " << donnees_nom[1] << std::endl;
+	std::cin >> this->donnees[1];
+	std::cout << "Please enter : " << donnees_nom[2] << std::endl;
+	std::cin >> this->donnees[2];
+	std::cout << "Please enter : " << donnees_nom[3] << std::endl;
+	std::cin >> this->donnees[3];
 }
