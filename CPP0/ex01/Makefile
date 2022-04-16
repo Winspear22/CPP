@@ -6,22 +6,24 @@
 #    By: user42 <user42@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/14 11:12:01 by user42            #+#    #+#              #
-#    Updated: 2022/04/14 15:09:06 by user42           ###   ########.fr        #
+#    Updated: 2022/04/14 15:36:43 by user42           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= megaphone
-SRCS= megaphone.cpp
-SRCSDIR = .
+NAME= annuaire
+SRCS= *.cpp
+SRCSDIR= .
+OBJ= *.o
 
 CC= clang++
 FLAGS= -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
-$(NAME): $(SRCSDIR)/$(SRCS)
+$(NAME): $(SRCS)
 	@echo "Compilation du programme $(NAME)"
-	@$(CC) $(FLAGS) -o $@ $^
+	@$(CC) $(FLAGS) $(SRCS) -o $(NAME)
+
 clean: 
 
 fclean: clean
@@ -29,4 +31,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
-
