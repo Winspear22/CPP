@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 14:26:59 by user42            #+#    #+#             */
-/*   Updated: 2022/04/17 19:56:00 by user42           ###   ########.fr       */
+/*   Updated: 2022/04/17 20:46:32 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,18 @@ int main(void)
 		{
 			
 			std::cin >> search; // RAJOUTER UN IF POUR < 0 ET > 8
-			std::cout << contacts[search].first_name << std::endl;
-			std::cout << contacts[search].last_name << std::endl;
-			std::cout << contacts[search].nickname << std::endl;
-			std::cout << contacts[search].phone_number << std::endl;
+			if (search < 1 || search >= index + 1)
+			{
+				std::cout << "\033[1;31mError. Adaloui's phonebook™ only contains\033[1;33m " << index << "\033[1;31m contacts.\033[0m" << std::endl;
+				std::cout << "\033[1;37mPlease type a number ranging between \033[1;32m1 and 8.\033[0m" << std::endl;
+			}	
+			else
+			{
+				std::cout << contacts[search - 1].first_name << std::endl;
+				std::cout << contacts[search - 1].last_name << std::endl;
+				std::cout << contacts[search - 1].nickname << std::endl;
+				std::cout << contacts[search - 1].phone_number << std::endl;
+			}
 		}
 		else if (buff == "EXIT")
 		{
