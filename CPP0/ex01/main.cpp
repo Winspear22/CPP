@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adaloui <adaloui@student.42.fr>            +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 14:26:59 by user42            #+#    #+#             */
-/*   Updated: 2022/04/16 17:34:06 by adaloui          ###   ########.fr       */
+/*   Updated: 2022/04/17 15:52:19 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ int main(int argc, char **argv)
 	(void)argc;
 	(void)argv;
 	std::string buff;
-	
+
 	PhoneBook instance;
 	instance.contact_nb = 0;
 	std::cout << "\033[1;32mHello and welcome to adaloui's phonebook™.\033[0m" << std::endl;
 	std::cout << "What can we do for you ? ";
 	while (1)
 	{
-		std::cin >> buff;
+		getline(std::cin, buff);
 		if (buff == "ADD")
 			instance.add_contacts();
 		else if (buff == "SEARCH")
