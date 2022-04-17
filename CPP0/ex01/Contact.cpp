@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adaloui <adaloui@student.42.fr>            +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 16:34:06 by user42            #+#    #+#             */
-/*   Updated: 2022/04/16 19:06:44 by adaloui          ###   ########.fr       */
+/*   Updated: 2022/04/17 19:22:57 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,52 @@ Contact::~Contact(void)
     return;
 }
 
-void Contact::write_informations(int contact_nb)
+std::string Contact::get_firstname(std::string tmp) //const
 {
-	(void)contact_nb;
+	//this->first_name << tmp;
+	//std::cout << this->first_name;
+//	std::cout << tmp;
+	this->first_name = tmp;
+	return (this->first_name);
+}
+
+std::string Contact::get_lastname(std::string tmp) //const
+{
+//	std::cout << tmp;
+	this->last_name = tmp;
+	return (this->last_name);
+}
+
+std::string Contact::get_nickname(std::string tmp)// const
+{
+//	std::cout << tmp;
+	this->nickname = tmp;
+	return (this->nickname);
+}
+
+std::string Contact::get_phonenumber(std::string tmp) //const
+{
+//	std::cout << tmp;
+	this->phone_number = tmp;
+	return (this->phone_number);
+}
+
+Contact Contact::write_informations(void)
+{
+	Contact new_contact;
+	std::string tmp;
+
 	std::cout << "Please enter : " << donnees_nom[0] << std::endl;
-	std::cin >> this->donnees[0];
+	getline(std::cin, tmp);
+	new_contact.get_firstname(tmp);
 	std::cout << "Please enter : " << donnees_nom[1] << std::endl;
-	std::cin >> this->donnees[1];
+	getline(std::cin, tmp);
+	new_contact.get_lastname(tmp);
 	std::cout << "Please enter : " << donnees_nom[2] << std::endl;
-	std::cin >> this->donnees[2];
+	getline(std::cin, tmp);
+	new_contact.get_nickname(tmp);
 	std::cout << "Please enter : " << donnees_nom[3] << std::endl;
-	std::cin >> this->donnees[3];
+	getline(std::cin, tmp);
+	new_contact.get_phonenumber(tmp);
+	return (new_contact);
 }
