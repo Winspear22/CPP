@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adaloui <adaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 12:13:39 by user42            #+#    #+#             */
-/*   Updated: 2022/04/17 19:19:59 by user42           ###   ########.fr       */
+/*   Updated: 2022/04/18 14:40:39 by adaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <iomanip>
 #include <cstring>
+#include <cstdlib>
 #include <string.h>
 
 class Contact
@@ -54,7 +55,7 @@ public:
     
    // Contact add_contacts(void);
 	void delete_and_add_ctc(void);
-    void find_contacts(void);
+    void find_contacts(Contact *contacts, int index);
 };
 
 #endif

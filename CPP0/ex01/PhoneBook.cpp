@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adaloui <adaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 16:34:41 by user42            #+#    #+#             */
-/*   Updated: 2022/04/17 19:00:42 by user42           ###   ########.fr       */
+/*   Updated: 2022/04/18 14:47:09 by adaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,20 +47,24 @@ void PhoneBook::delete_and_add_ctc(void)
 
 }*/
 
-void PhoneBook::find_contacts(void)
+void PhoneBook::find_contacts(Contact *contacts, int index)
 {
-	int index;
+	int search;
 
-	index = 0;
-    if (this->contact_nb == 0)
-        std::cout << "You don't have any contact. Add a contact before searching for one." << std::endl;
-    else
-    {
-		while (index < 4)
-		{
-			std::cout << this->contacts[this->contact_nb].first_name[index] << std::endl;
-			index++;
-		}
-        std::cout << "You have " << this->contact_nb << " contacts." << std::endl;
-    }
+	search = 0;
+	std::cin >> search; // RAJOUTER UN IF POUR < 0 ET > 8
+	if (search < 1 || search >= index + 1)
+	{
+		std::cout << "\033[1;31mError. Adaloui's phonebook™ only contains\033[1;33m " << index << "\033[1;31m contacts.\033[0m" << std::endl;
+		std::cout << "\033[1;37mPlease type a number ranging between \033[1;32m1 and 8.\033[0m" << std::endl;
+		std::cin.ignore(10000, '\n');
+	}	
+	else
+	{
+		std::cout << contacts[search - 1].first_name << std::endl;
+		std::cout << contacts[search - 1].last_name << std::endl;
+		std::cout << contacts[search - 1].nickname << std::endl;
+		std::cout << contacts[search - 1].phone_number << std::endl;
+	}
+	std::cin.ignore(10000, '\n');
 }
