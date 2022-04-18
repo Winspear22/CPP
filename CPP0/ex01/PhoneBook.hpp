@@ -6,7 +6,7 @@
 /*   By: adaloui <adaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 12:13:39 by user42            #+#    #+#             */
-/*   Updated: 2022/04/18 14:40:39 by adaloui          ###   ########.fr       */
+/*   Updated: 2022/04/18 14:49:54 by adaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ public:
     std::string nickname;
     std::string phone_number;
 
-    std::string get_firstname(std::string str); //const;
-    std::string get_lastname(std::string tmp);//const;
-    std::string get_nickname(std::string tmp); // const;
-    std::string get_phonenumber(std::string tmp); // const;
+    std::string get_firstname(std::string str);
+    std::string get_lastname(std::string tmp);
+    std::string get_nickname(std::string tmp);
+    std::string get_phonenumber(std::string tmp);
 
     Contact(void);
     ~Contact(void);
