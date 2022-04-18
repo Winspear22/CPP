@@ -6,18 +6,19 @@
 /*   By: adaloui <adaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 16:34:06 by user42            #+#    #+#             */
-/*   Updated: 2022/04/18 15:10:11 by adaloui          ###   ########.fr       */
+/*   Updated: 2022/04/18 15:59:26 by adaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-std::string Contact::donnees_nom[4] =
+std::string Contact::donnees_nom[5] =
 {
 	"First name : ",
 	"Last name : ",
 	"Nickname : ",
-	"Phone number : "
+	"Phone number : ",
+	"Darkest secret : "
 };
 
 Contact::Contact(void)
@@ -54,6 +55,12 @@ std::string Contact::get_phonenumber(std::string tmp) //const
 	return (this->phone_number);
 }
 
+std::string Contact::get_darkest_secret(std::string tmp)
+{
+	this->darkest_secret = tmp;
+	return (this->darkest_secret);
+}
+
 Contact Contact::write_informations(void)
 {
 	Contact new_contact;
@@ -64,7 +71,7 @@ Contact Contact::write_informations(void)
 	while (tmp.empty() == true)
 	{
 		std::cout << "\033[1;31mError. You cannot leave this empty\n\033[0m";
-		std::cout << "Please type your first name : ";
+		std::cout << "Please type your \033[1;37mfirst name : \033[0m";
 		getline(std::cin, tmp);
 	}
 	new_contact.get_firstname(tmp);
@@ -73,7 +80,7 @@ Contact Contact::write_informations(void)
 	while (tmp.empty() == true)
 	{
 		std::cout << "\033[1;31mError. You cannot leave this empty\n\033[0m";
-		std::cout << "Please type your last name : ";
+		std::cout << "Please type your \033[1;37mlast name : \033[0m";
 		getline(std::cin, tmp);
 	}
 	new_contact.get_lastname(tmp);
@@ -82,7 +89,7 @@ Contact Contact::write_informations(void)
 	while (tmp.empty() == true)
 	{
 		std::cout << "\033[1;31mError. You cannot leave this empty\n\033[0m";
-		std::cout << "Please type your nickname : ";
+		std::cout << "Please type your \033[1;37mnickname : \033[0m";
 		getline(std::cin, tmp);
 	}
 	new_contact.get_nickname(tmp);
@@ -91,9 +98,18 @@ Contact Contact::write_informations(void)
 	while (tmp.empty() == true)
 	{
 		std::cout << "\033[1;31mError. You cannot leave this empty\n\033[0m";
-		std::cout << "Please type your phone number : ";
+		std::cout << "Please type your \033[1;37mphone number : \033[0m";
 		getline(std::cin, tmp);
 	}
 	new_contact.get_phonenumber(tmp);
+	std::cout << "Please enter : " << std::endl << donnees_nom[4];// << std::endl;
+	getline(std::cin, tmp);
+	while (tmp.empty() == true)
+	{
+		std::cout << "\033[1;31mError. You cannot leave this empty\n\033[0m";
+		std::cout << "Please type your \033[1;37mphone number : \033[0m";
+		getline(std::cin, tmp);
+	}
+	new_contact.get_darkest_secret(tmp);
 	return (new_contact);
 }

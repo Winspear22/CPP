@@ -6,7 +6,7 @@
 /*   By: adaloui <adaloui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 16:34:41 by user42            #+#    #+#             */
-/*   Updated: 2022/04/18 14:47:09 by adaloui          ###   ########.fr       */
+/*   Updated: 2022/04/18 15:12:01 by adaloui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ void PhoneBook::find_contacts(Contact *contacts, int index)
 	{
 		std::cout << "\033[1;31mError. Adaloui's phonebook™ only contains\033[1;33m " << index << "\033[1;31m contacts.\033[0m" << std::endl;
 		std::cout << "\033[1;37mPlease type a number ranging between \033[1;32m1 and 8.\033[0m" << std::endl;
-		std::cin.ignore(10000, '\n');
 	}	
 	else
 	{
