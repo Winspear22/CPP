@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 12:13:39 by user42            #+#    #+#             */
-/*   Updated: 2022/04/19 01:58:33 by user42           ###   ########.fr       */
+/*   Updated: 2022/04/19 03:00:51 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,8 @@ public:
     PhoneBook(void);
     ~PhoneBook(void);
     
-   // Contact add_contacts(void);
-	void delete_and_add_ctc(void);
     void find_contacts(Contact *contacts, int index);
-    void print_pipes(void);
+    std::string limit_info(std::string str);
 };
 
 #endif

@@ -3,18 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adaloui <adaloui@student.42.fr>            +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 12:13:31 by user42            #+#    #+#             */
-/*   Updated: 2022/04/16 17:48:21 by adaloui          ###   ########.fr       */
+/*   Updated: 2022/04/19 03:00:58 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
-
-/*#include <iostream>
-#include <iomanip>*/
 
 # include <iostream>
 # include <iomanip>

@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 16:34:41 by user42            #+#    #+#             */
-/*   Updated: 2022/04/19 02:45:36 by user42           ###   ########.fr       */
+/*   Updated: 2022/04/19 04:11:25 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,61 +22,52 @@ PhoneBook::~PhoneBook(void)
     return;
 }
 
-void PhoneBook::delete_and_add_ctc(void)
+std::string PhoneBook::limit_info(std::string str)
 {
-	std::cout << "Je suis dans add_delete." << std::endl;
-}
-
-/*Contact PhoneBook::add_contacts(void)
-{
-	int index;
-
-	index = 0;
-	if (this->contact_nb == 8)
-		this->delete_and_add_ctc();
-	else
-	{
-		this->contacts[this->contact_nb].write_informations();
-    	this->contact_nb++;
-	} 
-	while (index < 4)
-	{
-		std::cout << this->contacts->first_name[index] << std::endl;
-		index++;
-	}
-
-}*/
-
-void PhoneBook::print_pipes(void)
-{
-	
+	if (str.length() >= 10)
+		str = str.substr(0, 9).append(".");
+	return (str);
 }
 
 void PhoneBook::find_contacts(Contact *contacts, int index)
 {
+	int i;
 	int search;
 
 	search = 0;
-	std::cin >> search; // RAJOUTER UN IF POUR < 0 ET > 8
-	if (search < 1 || search >= index + 1)
+	i = 0;
+	if (index == 0)
 	{
-		std::cout << "\033[1;31mError. Adaloui's phonebook™ only contains\033[1;33m " << index << "\033[1;31m contacts.\033[0m" << std::endl;
-		std::cout << "\033[1;37mPlease type a number ranging between \033[1;32m1 and 8.\033[0m" << std::endl;
-	}	
-	else
+		std::cout << "\033[1;31mError. You don't have enough contact to use that command.\033[0m" << std::endl;
+		return;
+	}
+	while (i < index)
 	{
-
-		std::cout << std::setfill(' ') << std::setw(10) << search;
+		std::cout << std::setfill(' ') << std::setw(10) << i + 1;
 		std::cout << " | ";
-		std::cout << std::setfill(' ') << std::setw(10) << contacts[search - 1].first_name;// << std::endl;
+		std::cout << std::setfill(' ') << std::setw(10) << limit_info(contacts[i].first_name);
 		std::cout << " | ";
-		std::cout << std::setfill(' ') << std::setw(10) << contacts[search - 1].last_name;// << std::endl;
+		std::cout << std::setfill(' ') << std::setw(10) << limit_info(contacts[i].last_name);
 		std::cout << " | ";
-		std::cout << std::setfill(' ') << std::setw(10) << contacts[search - 1].nickname;// << std::endl;
+		std::cout << std::setfill(' ') << std::setw(10) << limit_info(contacts[i].nickname);
 		std::cout << " | ";
-		std::cout << std::setfill(' ') << std::setw(10) << contacts[search - 1].phone_number;// << std::endl;
+		std::cout << std::setfill(' ') << std::setw(10) << limit_info(contacts[i].phone_number);
 		std::cout << " | ";
 		std::cout << std::endl;
+		i++;
 	}
+	std::cout << "Please choose the contact you want to see." << std::endl << "> ";
+	while (!(std::cin >> search) || (search < 1 || search >= index + 1))
+	{
+		std::cout << "\033[1;31mError. Adaloui's phonebook™ only contains\033[1;33m " << index << "\033[1;31m contacts.\033[0m" << std::endl;
+		std::cout << "\033[1;37mPlease type a number ranging between \033[1;32m1 and " << index << ".\033[0m" << std::endl;
+		std::cout << "> ";
+		std::cin.clear();
+		std::cin.ignore(10000,'\n');
+	}
+	std::cout << contacts[search - 1].first_name << std::endl;
+	std::cout << contacts[search - 1].last_name << std::endl;
+	std::cout << contacts[search - 1].nickname << std::endl;
+	std::cout << contacts[search - 1].phone_number << std::endl;
 	std::cin.ignore(10000, '\n');
 }
