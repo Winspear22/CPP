@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 16:34:41 by user42            #+#    #+#             */
-/*   Updated: 2022/04/19 04:11:25 by user42           ###   ########.fr       */
+/*   Updated: 2022/04/19 05:06:06 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,19 @@ void PhoneBook::find_contacts(Contact *contacts, int index)
 
 	search = 0;
 	i = 0;
-	if (index == 0)
+	if (index == 0 && contacts->first_name.length() == 0)
 	{
 		std::cout << "\033[1;31mError. You don't have enough contact to use that command.\033[0m" << std::endl;
 		return;
 	}
+	std::cout << std::setfill(' ') << std::setw(10) << "Index";
+	std::cout << " | ";
+	std::cout << std::setfill(' ') << std::setw(10) << "First name";
+	std::cout << " | ";
+	std::cout << std::setfill(' ') << std::setw(10) << "Last name";
+	std::cout << " | ";
+	std::cout << std::setfill(' ') << std::setw(10) << "Nickname";
+	std::cout << " | " << std::endl;
 	while (i < index)
 	{
 		std::cout << std::setfill(' ') << std::setw(10) << i + 1;
@@ -51,8 +59,7 @@ void PhoneBook::find_contacts(Contact *contacts, int index)
 		std::cout << " | ";
 		std::cout << std::setfill(' ') << std::setw(10) << limit_info(contacts[i].nickname);
 		std::cout << " | ";
-		std::cout << std::setfill(' ') << std::setw(10) << limit_info(contacts[i].phone_number);
-		std::cout << " | ";
+
 		std::cout << std::endl;
 		i++;
 	}
@@ -65,9 +72,9 @@ void PhoneBook::find_contacts(Contact *contacts, int index)
 		std::cin.clear();
 		std::cin.ignore(10000,'\n');
 	}
-	std::cout << contacts[search - 1].first_name << std::endl;
-	std::cout << contacts[search - 1].last_name << std::endl;
-	std::cout << contacts[search - 1].nickname << std::endl;
-	std::cout << contacts[search - 1].phone_number << std::endl;
+	std::cout << "First name : " << contacts[search - 1].first_name << std::endl;
+	std::cout << "Last name : " << contacts[search - 1].last_name << std::endl;
+	std::cout << "Nickname : " << contacts[search - 1].nickname << std::endl;
+	std::cout << "Phone number : " << contacts[search - 1].phone_number << std::endl;
 	std::cin.ignore(10000, '\n');
 }

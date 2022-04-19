@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adaloui <adaloui@student.42.fr>            +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 16:34:06 by user42            #+#    #+#             */
-/*   Updated: 2022/04/18 15:59:26 by adaloui          ###   ########.fr       */
+/*   Updated: 2022/04/19 05:09:27 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,5 +111,6 @@ Contact Contact::write_informations(void)
 		getline(std::cin, tmp);
 	}
 	new_contact.get_darkest_secret(tmp);
+	std::cout << "\033[1;32mContact successfully added ! :)\033[0m" << std::endl;
 	return (new_contact);
 }
