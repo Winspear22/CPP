@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 14:26:59 by user42            #+#    #+#             */
-/*   Updated: 2022/04/19 04:49:40 by user42           ###   ########.fr       */
+/*   Updated: 2022/04/19 14:29:57 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,8 @@ int main(void)
 	instance.contact_nb = 0;
 	std::cout << "\033[1;32mHello and welcome to adaloui's phonebook™.\033[0m" << std::endl;
 	std::cout << "What can we do for you ? ";
-	while (1)
+	while (getline(std::cin, buff))
 	{
-		getline(std::cin, buff);
 		if (buff == "ADD")
 		{
 			if (index < 8)
