@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adaloui <adaloui@student.42.fr>            +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 16:34:41 by user42            #+#    #+#             */
-/*   Updated: 2022/04/18 15:12:01 by adaloui          ###   ########.fr       */
+/*   Updated: 2022/04/19 02:45:36 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,11 @@ void PhoneBook::delete_and_add_ctc(void)
 
 }*/
 
+void PhoneBook::print_pipes(void)
+{
+	
+}
+
 void PhoneBook::find_contacts(Contact *contacts, int index)
 {
 	int search;
@@ -60,10 +65,18 @@ void PhoneBook::find_contacts(Contact *contacts, int index)
 	}	
 	else
 	{
-		std::cout << contacts[search - 1].first_name << std::endl;
-		std::cout << contacts[search - 1].last_name << std::endl;
-		std::cout << contacts[search - 1].nickname << std::endl;
-		std::cout << contacts[search - 1].phone_number << std::endl;
+
+		std::cout << std::setfill(' ') << std::setw(10) << search;
+		std::cout << " | ";
+		std::cout << std::setfill(' ') << std::setw(10) << contacts[search - 1].first_name;// << std::endl;
+		std::cout << " | ";
+		std::cout << std::setfill(' ') << std::setw(10) << contacts[search - 1].last_name;// << std::endl;
+		std::cout << " | ";
+		std::cout << std::setfill(' ') << std::setw(10) << contacts[search - 1].nickname;// << std::endl;
+		std::cout << " | ";
+		std::cout << std::setfill(' ') << std::setw(10) << contacts[search - 1].phone_number;// << std::endl;
+		std::cout << " | ";
+		std::cout << std::endl;
 	}
 	std::cin.ignore(10000, '\n');
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adaloui <adaloui@student.42.fr>            +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 12:13:39 by user42            #+#    #+#             */
-/*   Updated: 2022/04/18 15:57:23 by adaloui          ###   ########.fr       */
+/*   Updated: 2022/04/19 01:58:33 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ public:
    // Contact add_contacts(void);
 	void delete_and_add_ctc(void);
     void find_contacts(Contact *contacts, int index);
+    void print_pipes(void);
 };
 
 #endif
